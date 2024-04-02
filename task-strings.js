@@ -5,12 +5,13 @@
 // Example:
 // console.log(parametrize("Javascript is the best"));
 // "javascript-is-the-best"
-
+const text = "Javascript is the best";
 // Your code:
 const parametrize = (input) => {
-
+    return input.toLowerCase().replaceAll(' ','-')
 };
-
+console.log("-----------parametrize--------");
+console.log(parametrize(text));
 // 2 =================================
 // Write function that takes object and return sentence
 // Example:
@@ -19,9 +20,10 @@ const parametrize = (input) => {
 
 // Your code:
 const giveSentenceForPerson = (obj) => {
-
+    return `Hello ${obj.name} from ${obj.location}! It is nice to meet you! You look awesome for your ${obj.age}, young ${obj.position}!`
 };
-
+console.log("-----------giveSentenceForPerson--------");
+console.log(giveSentenceForPerson({name: "Obi-wan", position: "Jedi", age: 40, location: "Starwars universe"}));
 // 3 =================================
 // Write function that takes string and replace all `a`, `e`, `i`, `o` with *
 // Example:
@@ -29,5 +31,7 @@ const giveSentenceForPerson = (obj) => {
 
 // Your code:
 const replace = (input) => {
-
+ return input.replace(/[aeio]/g, '*');
 };
+console.log("-----------replace--------");
+console.log(replace("Hello Javascript"));

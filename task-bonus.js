@@ -9,9 +9,12 @@
 // Your code:
 const drawTriangle = (length = 5) => {
   
-    // ... write code ...
+  for (let i = 1; i <= length; i++) {
+    console.log("* ".repeat(i));
+  }
 };
-
+console.log("-----drawTriangle------");
+drawTriangle();
 // 2#  ========== BONUS =======================
 // Write function which will (with cycles) display this (keep in mind that there is no space after the last char):
 // * * * * * * * * * *
@@ -28,9 +31,14 @@ const drawTriangle = (length = 5) => {
 
 // Your code:
 const drawJavascriptWord = (word = "javascript") => {
-  // ... write code ...
+word = word.toUpperCase();
+for (let i = word.length; i >= 0; i--) {
+  let w = [...word];
+  console.log(w.fill('*', 0, i).toString().replaceAll(',',' '));
+}
 };
-
+console.log("-----drawJavascriptWord------");
+drawJavascriptWord();
 
 // 3#  ========== BONUS =======================
 // Create function that takes array of vehicles with measured top speeds. Return array of vehicle with top speed.
@@ -48,5 +56,17 @@ const drawJavascriptWord = (word = "javascript") => {
 
 // Your code:
 const getVehiclesAndTopSpeed = (vehicles) => {
-  
+vehicles.forEach(element => {
+  let top  = Math.max(...element.measuredSpeeds);
+  element.topSpeed = top;
+  delete element.measuredSpeeds;
+});
 };
+const vehicles = [
+{ name: "Executor Star Dreadnought", measuredSpeeds: [555, 545, 577, 600] },
+{ name: "T-47 Airspeeder", measuredSpeeds: [300, 311, 299, 350] },
+{ name: "AT-AT", measuredSpeeds: [20, 21, 20, 19] },
+];
+console.log("-----getVehiclesAndTopSpeed------");
+getVehiclesAndTopSpeed(vehicles);
+console.log(vehicles);

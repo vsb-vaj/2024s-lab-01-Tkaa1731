@@ -13,79 +13,105 @@ for (let i = 0; i < length; i = i + 1) {
 }
 
 // a) Function which will print to console a whole array
-const printArray = (numbers) => {
-  // Your code:
- 
+  const printArray = (numbers) => {
+    console.log(numbers);
 };
+
+console.log("-----printArray------");
+printArray(numbers);
 
 // b) Function which will print to console the length of array
-const printLength = (numbers) => {
-  // Your code:
- 
+  const printLength = (numbers) => {
+  console.log(numbers.length);
 };
+
+console.log("-----printLength------");
+printLength(numbers);
 
 // c) Function which will print to console the first element of array
-const printFirstItem = (numbers) => {
-  // Your code:
-
+  const printFirstItem = (numbers) => {
+  console.log(numbers[0]);
 };
+
+console.log("-----printFirstItem------");
+printFirstItem(numbers);
 
 // d) Function which will print to console the last element
-const printLastItem = (numbers) => {
-  // Your code:
-
+  const printLastItem = (numbers) => {
+    console.log(numbers[numbers.length-1]);
 };
+
+console.log("-----printLastItem------");
+printLastItem(numbers);
 
 // e) Function which will print to console the largest number (You can check Math functions)
-const printLargestItem = (numbers) => {
-  // Your code:
-
+  const printLargestItem = (numbers) => {
+    console.log(Math.max(...numbers));
 };
+console.log("-----printLargestItem------");
+printLargestItem(numbers);
 
 // f) Function which will print to console the smallest number (You can check Math functions)
-const printSmallestItem = (numbers) => {
+  const printSmallestItem = (numbers) => {
   // Your code:
-
+  console.log(Math.min(...numbers));
 };
-
+console.log("-----printSmallestItem------");
+printSmallestItem(numbers);
 // g) Function which will print to console the sum of all numbers in array (You can check reduce function)
-const printSum = (numbers) => {
+  const printSum = (numbers) => {
   // Your code:
 
+    console.log(numbers.reduce(
+      (accumulator, cv) => accumulator + cv));
 };
-
+console.log("-----printSum------");
+printSum(numbers);
 // h) Function which will print to console the difference between the largest and the smallest number (You can check Math functions)
-const printSALDifference = (numbers) => {
+  const printSALDifference = (numbers) => {
   // Your code:
-
+    console.log(Math.max(...numbers)-Math.min(...numbers));
 };
-
+console.log("-----printSALDifference------");
+printSALDifference(numbers);
 // i) Function which will print to console the average of all numbers (You can check reduce function)
-const printAverage = (numbers) => {
+  const printAverage = (numbers) => {
   // Your code:
-
-
+  var sum = numbers.reduce(
+    (accumulator, cv) => accumulator + cv);
+    
+    console.log(sum / numbers.length);
 };
-
+console.log("-----printAverage------");
+printAverage(numbers);
 // j) Function which will print to console the index of largest number (You can check Math functions)
-const printLargestsIndex = (numbers) => {
+  const printLargestsIndex = (numbers) => {
   // Your code:
-
+    const Max = Math.max(...numbers);
+    console.log(numbers.indexOf(Max));
 
 };
-
+console.log("-----printLargestsIndex------");
+printLargestsIndex(numbers);
 // k) Function which will print to console the even numbers (not the array of even numbers),
 // if array doesn't contain any even number, show text "Even number isn't in array"
-const printEvenNums = (numbers) => {
+  const printEvenNums = (numbers) => {
   // Your code:
-
-
+  const even = (element) => element % 2 === 0;
+  console.log(numbers.some(even)?"Even numbers:":"Even number isn't in array");
+  numbers.forEach(n => {
+    if(n % 2 === 0)
+      console.log(n);
+  });
 };
-
+console.log("-----printEvenNums------");
+printEvenNums(numbers);
 // l) Function which will multiple by 2 every number in array and print the array to console
 // Example: printNumsMultipliedBy2([1,2,3]) -> [2,4,6]
-const printNumsMultipliedBy2 = (numbers) => {
+  const printNumsMultipliedBy2 = (numbers) => {
   // Your code:
-
+    console.log(numbers.map((n)=> n*2));
 
 };
+console.log("-----printNumsMultipliedBy2------");
+printNumsMultipliedBy2(numbers);
